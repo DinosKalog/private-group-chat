@@ -86,9 +86,9 @@ function ChatRoom(){
 
 
   return (<>
-    <div>
+    <main>
       {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
-    </div>
+    </main>
 
     <form onSubmit={sendMessage}>
        <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
@@ -106,7 +106,7 @@ function ChatMessage(props){
   
   return (
     <div className={`message ${messageClass}`}> 
-         <img src={photoURL}></img> 
+         <img src={photoURL || 'https://robohash.org/4PS.png?set=set1'}></img> 
 
       <p>{text}</p>
     </div>
